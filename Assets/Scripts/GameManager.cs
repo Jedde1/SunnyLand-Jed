@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
         //Increases Score Value by incoming score
         score += scoreToAdd;
         //Update UI Here
+        UIManager.Instance.UpdateScore(score);
     }
 
     //Reloads Current Level
@@ -32,13 +33,13 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         //Loads the Next Level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PrevLevel()
     {
         //Loads Previous Level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     // Start is called before the first frame update

@@ -7,15 +7,15 @@ public class UIManager : MonoBehaviour
 {
     #region Singleton
     public static UIManager Instance = null;
-        private void Awake()
-        {
-        
-        }
+    private void Awake()
+    {
+        Instance = this;
+    }
     #endregion
 
     public Text scoreText;
 
-    public void Update(int score)
+    public void UpdateScore(int score)
     {
         //change the score text to updated value
         scoreText.text = "Score: " + score.ToString();
