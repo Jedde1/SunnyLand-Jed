@@ -44,4 +44,17 @@ public class Player : MonoBehaviour
 
         controller.Move(horizontal * moveSpeed);
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        //Detect hitting item
+        if (col.gameObject.tag == "Item")
+        {
+            //Add 1 to score
+            //--Play chime sound
+            //Destroy item
+            Destroy(col.gameObject);
+        }
+
+    }
 }
